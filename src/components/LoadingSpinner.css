@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ff6b35 0%, #f55a2a 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #ff6b35 100%);
 }
 
 .loading-spinner {
