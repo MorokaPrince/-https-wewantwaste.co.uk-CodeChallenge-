@@ -87,18 +87,57 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
 
         {isSelected && (
           <div className="selection-details">
-            <div className="next-steps">
-              <h4>Next Steps:</h4>
-              <ul>
-                <li>✓ Skip size selected: {skip.size} yards</li>
-                <li>📅 Hire period: {skip.hire_period_days} days</li>
-                <li>💰 Total cost: £{calculateTotalPrice().toFixed(2)} (inc. VAT)</li>
-                <li>📞 Call to book or continue online</li>
-              </ul>
-              <div className="booking-actions">
-                <button className="book-now-btn">Book Now</button>
-                <button className="call-btn">Call Us</button>
+            <div className="process-steps">
+              <div className="step completed">
+                <div className="step-icon">✓</div>
+                <div className="step-content">
+                  <span className="step-title">Skip Size Selected</span>
+                  <span className="step-detail">{skip.size} Yard Skip</span>
+                </div>
               </div>
+
+              <div className="step next">
+                <div className="step-icon">📋</div>
+                <div className="step-content">
+                  <span className="step-title">Permit Check</span>
+                  <span className="step-detail">Verify placement requirements</span>
+                </div>
+              </div>
+
+              <div className="step pending">
+                <div className="step-icon">📅</div>
+                <div className="step-content">
+                  <span className="step-title">Choose Date</span>
+                  <span className="step-detail">Select delivery date</span>
+                </div>
+              </div>
+
+              <div className="step pending">
+                <div className="step-icon">💳</div>
+                <div className="step-content">
+                  <span className="step-title">Payment</span>
+                  <span className="step-detail">Secure online payment</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="selection-summary">
+              <div className="summary-row">
+                <span className="summary-label">{skip.size} Yard Skip</span>
+                <span className="summary-value">£{calculateTotalPrice().toFixed(2)}</span>
+              </div>
+              <div className="summary-row hire-period">
+                <span className="summary-detail">{skip.hire_period_days} day hire</span>
+              </div>
+            </div>
+
+            <div className="action-buttons">
+              <button className="back-btn">Back</button>
+              <button className="continue-btn">Continue →</button>
+            </div>
+
+            <div className="disclaimer">
+              <p>Imagery and information shown throughout this website may not reflect the exact shape or size specification, colours may vary, options and/or accessories may be featured at additional cost.</p>
             </div>
           </div>
         )}
