@@ -7,8 +7,21 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
   }
 
   const getSkipImage = (size) => {
-    // Generate a placeholder image URL based on skip size
-    return `https://via.placeholder.com/300x200/4f46e5/ffffff?text=${size}+Yard+Skip`
+    // Use real skip images from Supabase storage
+    const baseUrl = 'https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/'
+    const imageMap = {
+      4: '4-yarder-skip.jpg',
+      6: '6-yarder-skip.jpg',
+      8: '8-yarder-skip.jpg',
+      10: '10-yarder-skip.jpg',
+      12: '12-yarder-skip.jpg',
+      14: '14-yarder-skip.jpg',
+      16: '16-yarder-skip.jpg',
+      20: '20-yarder-skip.jpg',
+      40: '40-yarder-skip.jpg'
+    }
+
+    return `${baseUrl}${imageMap[size] || '16-yarder-skip.jpg'}`
   }
 
   return (
@@ -61,9 +74,27 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
           </div>
         </div>
         
-        <button className="select-button">
-          {isSelected ? 'Selected' : 'Select This Skip'}
+        <button className={`select-button ${isSelected ? 'selected' : ''}`}>
+          {isSelected ? '✓ Selected' : 'Select This Skip'}
         </button>
+
+        {isSelected && (
+          <div className="selection-details">
+            <div className="next-steps">
+              <h4>Next Steps:</h4>
+              <ul>
+                <li>✓ Skip size selected: {skip.size} yards</li>
+                <li>📅 Hire period: {skip.hire_period_days} days</li>
+                <li>💰 Total cost: £{calculateTotalPrice().toFixed(2)} (inc. VAT)</li>
+                <li>📞 Call to book or continue online</li>
+              </ul>
+              <div className="booking-actions">
+                <button className="book-now-btn">Book Now</button>
+                <button className="call-btn">Call Us</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
