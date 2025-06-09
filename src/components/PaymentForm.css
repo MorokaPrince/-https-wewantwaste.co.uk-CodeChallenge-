@@ -1,0 +1,227 @@
+/* PaymentForm.css - Professional Payment Interface */
+.payment-form {
+  color: white;
+}
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.customer-details, .payment-section, .order-summary {
+  background: rgba(15, 20, 25, 0.6);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.customer-details h3, .payment-section h3, .order-summary h3 {
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  color: #ff6b35;
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.payment-methods {
+  margin-bottom: 2rem;
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 20, 25, 0.6);
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-method-option:hover {
+  border-color: rgba(255, 107, 53, 0.4);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.payment-method-option input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 107, 53, 0.5);
+  border-radius: 50%;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-method-option input[type="radio"]:checked {
+  border-color: #ff6b35;
+  background: #ff6b35;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+}
+
+.payment-method-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: white;
+  border-radius: 50%;
+}
+
+.payment-method-option:has(input[type="radio"]:checked) {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+}
+
+.method-content {
+  flex: 1;
+}
+
+.method-content strong {
+  display: block;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.method-content small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.card-details {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 2px solid rgba(255, 107, 53, 0.3);
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #ff6b35;
+}
+
+.step-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-primary-full {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border: none;
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 1rem 100%, 0 calc(100% - 1rem));
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.3),
+    0 8px 25px rgba(34, 197, 94, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary-full:hover:not(:disabled) {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.5),
+    0 12px 35px rgba(34, 197, 94, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary-full:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-details, .payment-section, .order-summary {
+    padding: 1.5rem;
+  }
+
+  .payment-method-option {
+    padding: 1rem;
+  }
+
+  .btn-primary-full {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+}

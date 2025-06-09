@@ -1,6 +1,9 @@
+import { useState } from 'react'
+import BookingFlow from './BookingFlow'
 import './SkipCard.css'
 
 const SkipCard = ({ skip, isSelected, onSelect }) => {
+  const [showBookingFlow, setShowBookingFlow] = useState(false)
   const calculateTotalPrice = () => {
     const vatAmount = (skip.price_before_vat * skip.vat) / 100
     return skip.price_before_vat + vatAmount
@@ -81,8 +84,17 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
           </div>
         </div>
         
-        <button className={`select-button ${isSelected ? 'selected' : ''}`}>
-          {isSelected ? '✓ Selected' : 'Select This Skip'}
+        <button
+          className={`select-button ${isSelected ? 'selected' : ''}`}
+          onClick={() => {
+            if (isSelected) {
+              setShowBookingFlow(true)
+            } else {
+              onSelect(skip)
+            }
+          }}
+        >
+          {isSelected ? 'CONTINUE →' : 'SELECT THIS SKIP'}
         </button>
 
         {isSelected && (
@@ -142,6 +154,13 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
           </div>
         )}
       </div>
+
+      {showBookingFlow && (
+        <BookingFlow
+          selectedSkip={skip}
+          onBack={() => setShowBookingFlow(false)}
+        />
+      )}
     </div>
   )
 }

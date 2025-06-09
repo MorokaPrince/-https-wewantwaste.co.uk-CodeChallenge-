@@ -1,0 +1,332 @@
+/* PermitCheck.css - Professional Form Styling */
+.permit-check {
+  color: white;
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.step-icon-large {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.step-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b35;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+}
+
+.step-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: rgba(15, 20, 25, 0.8);
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  border-radius: 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 20, 25, 0.6);
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.radio-option:hover {
+  border-color: rgba(255, 107, 53, 0.4);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 107, 53, 0.5);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+  border-color: #ff6b35;
+  background: #ff6b35;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: white;
+  border-radius: 50%;
+}
+
+.radio-content {
+  flex: 1;
+}
+
+.radio-content strong {
+  display: block;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.radio-content small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.permit-result {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.permit-result.permit-required {
+  background: rgba(255, 107, 53, 0.1);
+  border: 2px solid rgba(255, 107, 53, 0.3);
+}
+
+.permit-result.no-permit {
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.result-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.permit-required .result-content h3 {
+  color: #ff6b35;
+}
+
+.no-permit .result-content h3 {
+  color: #22c55e;
+}
+
+.result-content p {
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.permit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-item .label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.detail-item .value {
+  color: white;
+  font-weight: 700;
+}
+
+.step-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-secondary, .btn-primary, .btn-primary-full {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: none;
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 1rem 100%, 0 calc(100% - 1rem));
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-secondary {
+  background: rgba(107, 114, 128, 0.3);
+  color: white;
+  border: 2px solid rgba(107, 114, 128, 0.5);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(107, 114, 128, 0.5);
+  border-color: rgba(107, 114, 128, 0.7);
+}
+
+.btn-primary, .btn-primary-full {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  color: white;
+  border: 2px solid #ff6b35;
+  box-shadow:
+    0 0 0 2px rgba(255, 107, 53, 0.3),
+    0 8px 25px rgba(255, 107, 53, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary-full {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.btn-primary:hover:not(:disabled), .btn-primary-full:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e55a2b 0%, #d14d1f 100%);
+  box-shadow:
+    0 0 0 3px rgba(255, 107, 53, 0.5),
+    0 12px 35px rgba(255, 107, 53, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary:disabled, .btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-actions {
+    flex-direction: column;
+  }
+  
+  .radio-option {
+    padding: 1rem;
+  }
+  
+  .permit-result {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .result-icon {
+    align-self: center;
+  }
+}

@@ -77,18 +77,46 @@ function App() {
 
   return (
     <div className="app">
+      <div className="neon-background">
+        <div className="grid-overlay"></div>
+        <div className="floating-particles"></div>
+        <div className="cyber-grid"></div>
+      </div>
+
       <Header
         sortBy={sortBy}
         filterBy={filterBy}
         onSortChange={handleSortChange}
         onFilterChange={handleFilterChange}
       />
+
       <main className="main-content">
         <div className="container">
-          <div className="page-header">
-            <h1>Choose Your Skip Size</h1>
-            <p>Select the skip size that best suits your needs</p>
+          <div className="hero-section">
+            <h1 className="neon-title">
+              <span className="neon-text">SKIP</span>
+              <span className="neon-text-secondary">SELECTION</span>
+              <span className="neon-text-accent">V2.0</span>
+            </h1>
+            <p className="hero-subtitle">
+              Advanced waste management solutions with cutting-edge technology
+            </p>
+            <div className="stats-bar">
+              <div className="stat-item">
+                <span className="stat-number">{skips.length}</span>
+                <span className="stat-label">Available Skips</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{getSortedAndFilteredSkips().length}</span>
+                <span className="stat-label">Filtered Results</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{selectedSkip ? '1' : '0'}</span>
+                <span className="stat-label">Selected</span>
+              </div>
+            </div>
           </div>
+
           <SkipGrid
             skips={getSortedAndFilteredSkips()}
             selectedSkip={selectedSkip}
