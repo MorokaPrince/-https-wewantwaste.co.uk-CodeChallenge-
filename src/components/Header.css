@@ -26,7 +26,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ff6b35;
+  color: #1E3A8A;
   margin: 0;
   text-decoration: none;
 }
@@ -68,13 +68,13 @@
 }
 
 .control-select:hover {
-  border-color: #ff6b35;
+  border-color: #3B82F6;
 }
 
 .control-select:focus {
   outline: none;
-  border-color: #ff6b35;
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Mobile responsive */
