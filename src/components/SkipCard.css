@@ -99,6 +99,12 @@
   border: 1px solid #ffcc99;
 }
 
+.feature-badge.not-road-allowed {
+  background: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #ffb3b3;
+}
+
 .skip-pricing {
   margin-bottom: 1.5rem;
   padding: 1rem;

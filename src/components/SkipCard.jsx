@@ -45,12 +45,19 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
         <p className="skip-period">{skip.hire_period_days} day hire period</p>
         
         <div className="skip-features">
-          {skip.allowed_on_road && (
+          {skip.allowed_on_road ? (
             <span className="feature-badge road-allowed">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
               </svg>
               Road Placement
+            </span>
+          ) : (
+            <span className="feature-badge not-road-allowed">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              Not Allowed On Road
             </span>
           )}
           {skip.allows_heavy_waste && (
